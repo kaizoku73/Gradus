@@ -1,6 +1,6 @@
 import argparse
-from hist_embed import hist_embed
-from hist_extract import hist_extract
+from .hist_embed import encode
+from .hist_extract import decode
 
 
 def main():
@@ -26,10 +26,10 @@ def main():
 
     try:
         if args.command == 'embed':
-            hist_embed(args.image, args.payload, args.key)
+            encode(args.image, args.payload, args.key)
             print("Successfully embedded the payload in the encoded.png")
         elif args.command == 'extract':
-            hist_extract(args.stego, args.key)
+            decode(args.stego, args.key)
             print("Successfully extracted the payload")
     except Exception as e:
         print(f"Error : {str(e)}")

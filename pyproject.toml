@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "gradus"
-version = "1.0.0"
+version = "1.0.1"
 description = "Audio steganography tool using phase coding"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -33,9 +33,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "numpy>=1.21.0",
-    "scipy>=1.7.0",
-    "pycryptodome>=3.15.0"
+    "numpy>=2.3.2",
+    "pillow>=11.3.0",
+    "pycryptodome>=3.23.0"
 ]
 
 [project.urls]
@@ -45,7 +45,7 @@ Repository = "https://github.com/kaizoku73/Gradus"
 Documentation = "https://kaizoku.gitbook.io/steganography/histogram-shift-in-image"
 
 [project.scripts]
-Gradus = "gradus.cli:main"
+gradus = "gradus.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

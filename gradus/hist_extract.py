@@ -1,6 +1,6 @@
 from PIL import Image
 import random
-from aes import *
+from .aes import *
 import os
 import numpy as np
 
@@ -22,7 +22,7 @@ def find_peak(hist):
         z = int(np.argmin(hist))
     return u, z
 
-def hist_extract(stego_path, key):
+def decode(stego_path, key):
     try:
         if not os.path.exists(stego_path):
             raise FileNotFoundError(f"Stego image {stego_path} not found.")

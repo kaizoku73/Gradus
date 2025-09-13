@@ -1,6 +1,6 @@
 from PIL import Image
 import random
-from aes import *
+from .aes import *
 import os
 import numpy as np
 
@@ -23,7 +23,7 @@ def find_peak(hist):
         z = int(np.argmin(hist))
     return u, z
 
-def hist_embed(cover_path, payload, key):
+def encode(cover_path, payload, key):
 
     try:
         if not os.path.exists(cover_path):
